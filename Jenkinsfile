@@ -39,13 +39,6 @@ pipeline {
             }
         }
          }
-           stage('CanaryDeploy') {
-         when {
-       branch 'master'
-      }
-       environment {
-        CANARY_REPLICAS = 0
-           }
    steps {
      kubernetesDeploy(
        kubeconfigId: 'kubeconfig',
